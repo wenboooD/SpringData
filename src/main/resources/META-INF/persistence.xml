@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" version="2.0">
+    <!--需要配置persistence-unit节点
+        持久化单元：一个持久化单元 就是一个数据源的配置
+            name：持久化单元名称
+
+            transaction-type：事务管理的方式
+                    JTA：分布式事务管理
+
+                    RESOURCE_LOCAL：本地事务管理
+                    在大多数情况下,RESOURCE_LOCAL很好,这将使用基本的JDBC事务.
+                    缺点是该事务是JPA持久性单元的本地事务,因此如果想要跨越多个
+                    持久性单元的事务,那么RESOURCE_LOCAL可能不够好.
+    -->
+
+    <persistence-unit name="myJpa" transaction-type="RESOURCE_LOCAL">
+
+        <!-- jpa的实现方式 -->
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        <!--可选配置：配置jpa实现方的配置信息-->
+
+        <properties>
+            <property name="javax.persistence.jdbc.user" value="root"/>
+            <property name="javax.persistence.jdbc.password" value="root"/>
+            <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql:///dong_github"/>
+
+            <!--配置jpa实现方(hibernate)的配置信息
+               显示sql           ：   false|true console控制台打印sql语句！！
+               自动创建数据库表    ：  hibernate.hbm2ddl.auto hibernate的建表策略
+                       create-drop : 程序启动时删数据库中的表，然后创建，程序退出时删除数据表 如果表不存在报错  测试代码！！ 数据库没有影响！！
+                       create      : 程序运行时创建数据库表（如果有表，先删除表再创建）
+                       update      ：程序运行时创建表（如果有表，不会创建表） 更新表结构（如果表中少字段，自动添加字段）
+                       validate    ：校验 实体类中属性（username） - 表中字段映射关系（没有对应的字段） 程序启动会报错。
+                       none        ：不会创建表 什么都不做！！
+           -->
+
+            <!-- false|true console控制台打印sql语句！！ -->
+            <property name="hibernate.show_sql" value="true"/>
+
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
+
+        </properties>
+    </persistence-unit>
+</persistence>

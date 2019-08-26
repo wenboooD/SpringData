@@ -1,4 +1,4 @@
-package cn.iron.test;
+package cn.iron.test01;
 
 import cn.iron.domain.Customer;
 import cn.iron.utils.JpaUtils;

@@ -47,8 +47,8 @@
 
     <!--2.创建数据库连接池 -->
     <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
-        <property name="user" value="root"></property>
-        <property name="password" value="root"></property>
+        <property name="user" value="用户名"></property>
+        <property name="password" value="密码"></property>
         <property name="jdbcUrl" value="jdbc:mysql:///dong_github" ></property>
         <property name="driverClass" value="com.mysql.jdbc.Driver"></property>
     </bean>

@@ -1,9 +1,9 @@
-package cn.itcast.test;
+package cn.captinAmercia.test;
 
-import cn.itcast.dao.RoleDao;
-import cn.itcast.dao.UserDao;
-import cn.itcast.domain.Role;
-import cn.itcast.domain.User;
+import cn.captainAmerica.dao.RoleDao;
+import cn.captainAmerica.dao.UserDao;
+import cn.captainAmerica.domain.Role;
+import cn.captainAmerica.domain.User;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +13,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = "classpath:applicationContext.xml")
+@ContextConfiguration(locations = "classpath:applicationContext_CA.xml")
 public class ManyToManyTest {
 
     @Autowired

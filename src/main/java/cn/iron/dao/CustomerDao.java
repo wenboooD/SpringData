@@ -57,16 +57,7 @@ public interface CustomerDao extends JpaRepository<Customer,Long>,JpaSpecificati
     @Modifying
     public void updateCustomer(String name,long id);
 
-    /**
-     * 使用sql的形式查询：
-     *     查询全部的客户
-     *  sql ： select * from cst_customer;
-     *  Query : 配置sql查询
-     *      value ： sql语句
-     *      nativeQuery ： 查询方式
-     *          true ： sql查询
-     *          false：jpql查询
-     */
+    
     @Query(value = "select * from cst_customer where cust_name like ?1",nativeQuery = true)
     List<Object [] > findSql(String name);
 }
